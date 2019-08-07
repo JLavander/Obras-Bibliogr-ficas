@@ -1,0 +1,27 @@
+<p>Entre quantidade de Autores a ser inseridos:</p>
+<div class="form-group ">
+  <input name="qtdSolicitada" [(ngModel)]="quantidadeAInserir" class="form-control col-lg-2" />
+  &nbsp;&nbsp;&nbsp;
+  <div class="form-group">
+    <button (click)="onClickQtd()" class="btn btn-primary">Adicionar</button>
+  </div>
+</div>
+
+<div class="form-group">
+</div>
+
+<form method="post" (ngSubmit)="incluir()" [formGroup]="formulario">
+  <div class="form-group">
+    <p>
+      Nome do Autor:  {{ quantidadeAtual }}/{{ quantidadeTotal }}
+    </p>
+    <input id="NomeCompleto" dirname="NomeCompleto" [readonly]="btnQtdAtivo" formControlName="NomeCompleto" class="form-control col-lg-8" />
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Adicionar</button>
+  </div>
+  <strong>{{ msg }}</strong>
+</form>
+<br />
+
+
